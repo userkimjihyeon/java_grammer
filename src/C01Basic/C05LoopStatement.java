@@ -190,31 +190,31 @@ public class C05LoopStatement {
 //            }
 //        }
 
-//        ★100~200까지 수 중에서 가장 작은 소수를 출력
-        //방법1
-        for(int i=100; i<=200; i++) {
-            boolean check = false;
-            for(int j=2; j<=Math.sqrt(i); j++) {     //나눌 수는 1와 자기자신을 제외한다. 최대 i의 제곱근까지 확인한다. (왜? 중간값이상은 반복이므로) <=아닌지 확인
-                if(i % j == 0) {
-                    check = true;
-                    break;
-                }
-            }
-            if(!check) {
-                System.out.println(i + " : 소수입니다.");
-                break;
-            }
-        }
-        //방법2
-        loop:
-        for (int i = 100; i <= 200; i++) {
-            for (int j = 2; j <= Math.sqrt(i); j++) {
-                if (i % j == 0) {
-                    continue loop;      //continue도 라벨문 가능. 다음 반복으로 넘어감.
-                }
-            }
-            System.out.println(i);
-        }
+////        ★100~200까지 수 중에서 가장 작은 소수를 출력
+//        //방법1
+//        for(int i=100; i<=200; i++) {
+//            boolean check = false;
+//            for(int j=2; j<=Math.sqrt(i); j++) {     //나눌 수는 1와 자기자신을 제외한다. 최대 i의 제곱근까지 확인한다. (왜? 중간값이상은 반복이므로) <=아닌지 확인
+//                if(i % j == 0) {
+//                    check = true;
+//                    break;
+//                }
+//            }
+//            if(!check) {
+//                System.out.println(i + " : 소수입니다.");
+//                break;
+//            }
+//        }
+//        //방법2
+//        loop:
+//        for (int i = 100; i <= 200; i++) {
+//            for (int j = 2; j <= Math.sqrt(i); j++) {
+//                if (i % j == 0) {
+//                    continue loop;      //continue도 라벨문 가능. 다음 반복으로 넘어감.
+//                }
+//            }
+//            System.out.println(i);
+//        }
 
 ////        라벨문 : 반복문에 이름을 붙이는 것
 //        loop1:
