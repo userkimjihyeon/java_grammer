@@ -96,7 +96,7 @@ public class C05LoopStatement {
 //        }
 //        System.out.println(total);
 
-//        두수의 최대공약수 찾기
+//        ★두수의 최대공약수 찾기
 //        int a = 24;
 //        int b = 36;
 //
@@ -119,13 +119,13 @@ public class C05LoopStatement {
 //            }
 //        }
 
-//        소수구하기 : 1과 자신을 제외한 숫자로 나누어지지 않는 수
-//        사용자가 입력한 값이 소수인지 아닌지 판별해주는 프로그램
+////        ★소수구하기 : 1과 자신을 제외한 숫자로 나누어지지 않는 수
+////        사용자가 입력한 값이 소수인지 아닌지 판별해주는 프로그램
 //        Scanner sc = new Scanner(System.in);
 //        int input = sc.nextInt();
 //        boolean check = false;
 //
-////        for (int i=2; i*i<=input; i++) {     //i*i : input이 900인 경우, 30보다 큰 경우는 연산불필요
+////        for (int i=2; i*i<=input; i++) {           //i*i : input이 900인 경우, 30보다 큰 경우는 연산중복되므로 불필요
 //        for (int i=2; i<=Math.sqrt(input); i++) {    //Math.sqrt(input)
 //            if (input % i == 0) {
 //                check = true;
@@ -190,7 +190,7 @@ public class C05LoopStatement {
 //            }
 //        }
 
-//        100~200까지 수 중에서 가장 작은 소수를 출력
+//        ★100~200까지 수 중에서 가장 작은 소수를 출력
         //방법1
         for(int i=100; i<=200; i++) {
             boolean check = false;
@@ -210,23 +210,10 @@ public class C05LoopStatement {
         for (int i = 100; i <= 200; i++) {
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
-                    continue loop;      //continue도 라벨문 가능
+                    continue loop;      //continue도 라벨문 가능. 다음 반복으로 넘어감.
                 }
             }
             System.out.println(i);
-        }
-        //방법3
-        loop1:
-        for (int i = 100; i <= 200; i++) {
-            loop2:
-            for (int j = 2; j*j <= i; j++) {
-                if (i%j==0){
-                    continue loop1; // 소수가 아님. 다음 i로 넘어감.
-                }
-            }
-            // 여기까지 왔다는 건 소수라는 뜻
-            System.out.println(i);
-            break; // 가장 처음 나온 소수니까 출력하고 종료
         }
 
 ////        라벨문 : 반복문에 이름을 붙이는 것

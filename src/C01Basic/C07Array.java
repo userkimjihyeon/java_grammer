@@ -1,0 +1,58 @@
+package C01Basic;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class C07Array {
+    public static void main(String[] args) {
+////        배열표현식1. 배열 선언 후 할당 방식
+////        배열을 반드시 사전에 길이가 결정되어야 함.
+//        int[] arr1 = new int[5];    //선언과 동시에 길이 및 값이 0으로 초기화됨
+//        arr1[0] = 10;
+//        arr1[1] = 20;
+//        //arr1[2] = 30;
+//        arr1[3] = 40;
+//        arr1[4] = 50;
+//        arr1[5] = 10;   //index out of bounds 예외 발생. 배열길이가 동적으로 늘어날수 없음.
+//        System.out.println(arr1[2]);    //int배열의 경우 0으로 초기화. String배열은 null로 초기화.
+
+////        배열표현식2. 리터럴방식
+//        int[] arr2 = {10,20,30,40,50};
+//
+////        ⭐배열표현식3. ->오른쪽내용만봐도 타입을확인하기 용이함.
+//        int[] arr3 = new int[]{10,20,30,40,50};
+//
+////        배열표현식3.예시
+//        ArrayList<int[]> list = new ArrayList<>();
+//        list.add(new int[5]);
+//        list.add(new int[]{1,3,5,7});
+//
+//        System.out.println(list.get(1)[0]);     //1 출력
+//
+////        배열표현식4 : 불가 -> 배열의길이를 반드시 확정시켜야함.
+//        int[] arr4 = new int[];
+
+////        Arrays.fill : 배열에 모든값을 변경
+//        String[] arr = new String[5];
+////        방법1)
+//        for(int i=0; i<arr.length; i++) {
+//            arr[i] = "";
+//        }
+////        방법2)
+//        Arrays.fill(arr, "");   //Arrays에 메서드가 내장되어있음.
+
+//        오늘배운이론관련문제많이풀기
+//        85, 65, 90으로 구성된 int배열을 선언하고, 총합과 평균을 구해보시오.
+        int[] arr = new int[]{85, 65, 90};
+        int sum = 0;
+
+        for (int i=0; i<arr.length; i++) {
+            sum += arr[i];
+        }
+
+        System.out.println("총합 : " + sum);
+        System.out.println("평균 : " + sum/arr.length);
+
+
+    }
+}
