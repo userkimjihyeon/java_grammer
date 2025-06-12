@@ -2,6 +2,8 @@ package C01Basic;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class C06String {
     public static void main(String[] args) {
@@ -101,13 +103,137 @@ public class C06String {
 //        System.out.println(st1.contains("hello"));//true
 //        System.out.println(st1.contains("world"));//false
 
-//        문자열 더하기 : +=
-        String st1 = "hello";
-        st1 += " world";
-        st1 += '1'; //String에 char를 더하면 String으로 더해짐.
-        System.out.println(st1);
+////        문자열 더하기 : +=
+//        String st1 = "hello";
+//        st1 += " world";
+//        st1 += '1'; //String에 char를 더하면 String으로 더해짐.
+//        System.out.println(st1);
 
-//        프로그래머스-나머지 구하기(플랫폼 사용방법)
+////        프로그래머스-나머지 구하기(플랫폼 사용방법)
+////        ⭐프로그래머스-특정 문자 제거하기
+//        String my_string = "abcdef";
+//        String letter = "f";
+//        String answer = "";
+//        for(char c : my_string.toCharArray()) {     //⭐toCharArray()
+//            if(c != letter.charAt(0)) {             //⭐letter.charAt(0) : String과 char를 비교하고 싶을때 String.charAt()사용
+//                answer += c;
+//            }
+//        }
+//        System.out.println(answer);
+
+////        substring(a,b) : a이상 b미만의 index의 문자를 잘라 문자열 반환
+//        String st1 = "hello world";
+//        System.out.println(st1.substring(0, 5));    //hello
+//        System.out.println(st1.substring(6,st1.length()));  //world
+
+////        ⭐프로그래머스-특정 문자 제거하기
+//        String my_string = "abcdef";
+//        String letter = "f";
+//        String answer = "";
+//
+//        for (int i=0; i<my_string.length(); i++) {              //총 <5까지 반복이라서 인덱스는 0~4까지 즉 5번, i+1은 최대5
+//            if (!my_string.substring(i, i+1).equals(letter)) {  //⭐substring(i, i+1)     ⭐equals로 비교
+//                answer += my_string.substring(i, i+1);
+//            }
+//        }
+//        System.out.println(answer);
+
+////        ⭐프로그래머스-가운데 글자 가져오기
+//        //s의 총길이 % 2 해서 ==0은 짝수 !=0은 홀수
+//        //짝수는 나눈 몫의 +1해서 substring(몫, 2)
+//        //홀수는 나눈 몫 하나 가져오기  subsctring(몫, 1)
+//        //String s = "qwer";
+//        String s = "abcde";
+//        String answer = "";
+//
+//        int a = s.length() % 2; //나머지 1
+//        int b = s.length() / 2; //몫 2
+//
+//        if (a == 0) {    //짝수
+//            answer = s.substring(b-1, b+1); //⭐
+//        } else {         //홀수
+//            answer = s.substring(b, b+1);   //⭐
+//        }
+//        System.out.println(answer);
+
+////        trim, strip : 문자열 양쪽 끝의 공백 제거
+//        String st =  " hello world  ";
+//        String trim = st.trim();
+//        String strip = st.strip();
+//        System.out.println(trim);
+//        System.out.println(strip);
+
+////        toUpperCase : 모든 문자열을 대문자로 변환, toLowerCase : 모든 문자열을 소문자로 변환
+//        String s1 = "Hello";
+//        String s2 = s1.toUpperCase();
+//        String s3 = s1.toLowerCase();
+//        System.out.println(s2);
+//        System.out.println(s3);
+
+////        replace(a,b) : a문자열을 b문자열로 대체
+//        String st1 = "hello world";
+//        String st2 = st1.replace("world", "java");
+//        System.out.println(st2);
+
+////        replaceAll(a,b) : replace와 사용법 동일. 정규표현식을 쓸 수 있는 점이 차이점.
+//        String st1 = "01abC123한글123";
+////        한글 제거
+//        String answer1 = st1.replaceAll("[가-힣]", "");
+//        String answer2 = st1.replaceAll("[a-z]", "");
+//        String answer3 = st1.replaceAll("[A-Za-z]", "");
+//        System.out.println(answer1);
+//        System.out.println(answer2);
+//        System.out.println(answer3);
+
+////        전화번호 검증
+//        String number = "010-1234-1234";
+//        boolean check = number.matches("^\\d{3}-\\d{4}-\\d{4}$");
+//        if(check==false) {
+//            System.out.println("다시 입력하세요.");
+//        }
+
+////        이메일 검증
+//        String email = "abc1234@naver.com";
+//        boolean check_email = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", email);
+//        System.out.println(check_email);
+
+////        split : 특정문자를 기준으로 잘라서 문자배열로 만드는 것.
+//        String a = "a:b:c:d";
+//        String[] arr = a.split(":");
+//        System.out.println(Arrays.toString(arr));
+
+//        String b = "a b c  d";
+//        String[] arr = b.split(" ");
+//        String[] arr2 = b.split("\\s+");    //\s : 공백
+//        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr2));
+
+////        ⭐null과 공백의 차이
+//        String st1 = null;   //null은 String이 아님.
+//        String st2 = "";     //공백은 문자열임.
+//        String st3 = " ";    //스페이스
+//        System.out.println(st1==st2);   //false
+////        System.out.println(st1.isEmpty());  //nullpointer exception 발생
+//        System.out.println(st2.isEmpty());  //true
+//        System.out.println(st3.isBlank());  //true
+//        String abc = "hello    world   java";
+//        for(int i=0; i<abc.length(); i++) {
+//            if(abc.substring(i, i+1).isBlank()) {
+//                System.out.println(i + "번째는 blank");
+//            }
+//        }
+
+////        문자열합치기 -> 참고만
+//        String[] arr = {"java", "python", "javascript"};
+//        String answer = "";
+//        for(String a : arr) {
+//            answer += a;
+//            answer += "\n";
+//        }
+//        System.out.println(answer);
+//        String answer2 = String.join(" ", arr);
+//        System.out.println(answer2);
+
 
 ////        StringBuffer : 문자열 조립 객체
 //        StringBuffer sb = new StringBuffer();
