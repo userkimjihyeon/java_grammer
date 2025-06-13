@@ -210,8 +210,8 @@ public class C06String {
 
 ////        ⭐null과 공백의 차이
 //        String st1 = null;   //null은 String이 아님.
-//        String st2 = "";     //공백은 문자열임.
-//        String st3 = " ";    //스페이스
+//        String st2 = "";     //빈문자열은 문자열임.
+//        String st3 = " ";    //스페이스.
 //        System.out.println(st1==st2);   //false
 ////        System.out.println(st1.isEmpty());  //nullpointer exception 발생
 //        System.out.println(st2.isEmpty());  //true
@@ -273,12 +273,5 @@ public class C06String {
 //
 ////        프로그래머스 - 문자열밀기 -> 어려워서 못품
 
-        
-        
-        
-
-        
-        
-        
     }
 }
