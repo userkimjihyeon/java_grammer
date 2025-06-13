@@ -95,7 +95,7 @@ public class C06String {
 //            if(c=='a') count2++; //실행문이 1줄밖에 없을때는 중괄호 생략가능
 //        }
 
-////        indexOf(문자열) : 특정 문자열의 위치(index) 반환. 가장 먼저 나오는 문자열의 위치 반환.
+////        ⭐ndexOf(문자열) : 특정 문자열의 위치(index) 반환. 가장 먼저 나오는 문자열의 위치 반환.
 //        String st1 = "hello java java";
 //        System.out.println(st1.indexOf("java"));
 
@@ -263,7 +263,7 @@ public class C06String {
 ////        StringBuffer는 동시성이슈X == Thread-Safe함, 성능이 떨어짐.          -> 개발용
 //        StringBuffer sb2 = new StringBuffer();
 
-////        문자열 뒤집기
+////        ⭐문자열 뒤집기
 //        String st1 = "hello";
 //        StringBuilder sb = new StringBuilder();
 //        for(int i=st1.length()-1; i>=0; i--) {      //st1.length()-1(마지막인덱스)부터 ~ 0번째 인덱스까지
@@ -271,7 +271,7 @@ public class C06String {
 //        }
 //        System.out.println(sb);
 //
-////        프로그래머스 - 문자열밀기 -> 어려워서 못품
+////        ⭐프로그래머스 - 문자열밀기 -> 어려워서 못품
 
     }
 }
