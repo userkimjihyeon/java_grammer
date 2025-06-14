@@ -96,7 +96,7 @@ public class C08List {
 //            }
 //        }
 //
-//        //⭐배열->리스트
+//        //⭐리스트->배열
 //        int[] answer = new int[mylist.size()];
 //        for(int i=0; i<mylist.size(); i++) {
 //            answer[i] = mylist.get(i);
