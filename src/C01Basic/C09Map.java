@@ -92,7 +92,7 @@ public class C09Map {
 ////            }  else {
 ////                myMap.put(arr[i], 1);
 ////            }
-//////            getOrDefault(키값, 초기값) : key값 없을경우 초기값 리턴
+//////            getOrDefault(키값, 초기값) : key값 없을경우 초기값 리턴. 있으면 그 값+1
 //            myMap.put(arr[i], myMap.getOrDefault(arr[i], 0)+1);
 //        }
 //        System.out.println(myMap);
@@ -117,7 +117,7 @@ public class C09Map {
 //
 ////        가장 value가 큰 key값 찾기
 //        int max = Integer.MIN_VALUE;
-////        내가푼거 -> 걍 max만 구함.
+////        내가푼거 -> 걍 최대 value만 구함.
 //        for(int v : myMap.values()) {
 //            if(v > max) {
 //                max = v;
@@ -147,6 +147,7 @@ public class C09Map {
 //        //가장많이팔린책 출력
 //        int max = Integer.MIN_VALUE;    //최대 판매 횟수
 //        String maxKey = "";             //최대 판매 책 제목
+
 //        for(String k : myMap.keySet()) {
 //            if(myMap.get(k) > max) {
 //                max = myMap.get(k);
