@@ -270,8 +270,16 @@ public class C06String {
 //            sb.append(st1.charAt(i));
 //        }
 //        System.out.println(sb);
+
+////        ⭐문자열비교
+//        String s1 = "hello";
+//        String s2 = "dello";
+//        String s3 = "hello";
+//        System.out.println(s1.compareTo(s2));   //양수 h-d(아스키코드비교)
+//        System.out.println(s2.compareTo(s1));   //음수 d-h(아스키코드비교)
+//        System.out.println(s1.compareTo(s3));   //0 h-h(아스키코드비교)
 //
-////        ⭐프로그래머스 - 문자열밀기 -> 어려워서 못품
+////        ⭐프로그래머스 - 문자열밀기 -> 혼자풀어보기
 
     }
 }

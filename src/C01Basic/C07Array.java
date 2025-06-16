@@ -39,10 +39,8 @@ public class C07Array {
 //        for(int i=0; i<arr.length; i++) {
 //            arr[i] = "";
 //        }
-////        방법2)
+////        방법2)⭐
 //        Arrays.fill(arr, "");   //Arrays에 메서드가 내장되어있음.
-
-////        ⭐오늘배운이론관련문제많이풀기
 
 ////        85, 65, 90으로 구성된 int배열을 선언하고, 총합과 평균을 구해보시오.
 //        int[] arr = new int[]{85, 65, 90};
@@ -109,11 +107,11 @@ public class C07Array {
 ////        ⭐예습하기. 정렬알고리즘: dfs,bfs,그리디…
 //        int[] arr = {17,12,20,10,15};
 ////        자리(i)를 결정
-//        for(int i=0; i<arr.length-1; i++){      //⭐-1안하면, j=i+1에서 에러
+//        for(int i=0; i<arr.length-1; i++){      //⭐맨마지막-1에서 정렬이 완료됨. -1안하면, j=i+1에서 에러
 //            int min = arr[i];
 //            int minIndex = i;
-////            min값을 찾기위한 for문
-//            for(int j=i+1; j<arr.length; j++){    //⭐그냥 j=1하면 안됨? -> i가 다음으로 넘어갈때 j는 또 1로 가니까 안됨!!
+////            min값을 찾기위한 for문 -> min값 '인덱스'를 교체만 함!
+//            for(int j=i+1; j<arr.length; j++){    //⭐j=i+1 : 항상 오른쪽 값과 비교. 그냥 j=1하면 안됨? -> i가 다음으로 넘어갈때 j는 또 1로 가니까 안됨!!
 //                if(arr[j] < min) {
 //                    min = arr[j];
 //                    minIndex = j;
@@ -130,9 +128,9 @@ public class C07Array {
 //        int[] arr = {17,12,20,10,15};
 ////        자리(i)를 결정
 //        for(int i=0; i<arr.length-1; i++){
-//            //            min값을 찾기위한 for문
+////            min값을 찾기위한 for문
 //            for(int j=i+1; j<arr.length; j++){
-//                if(arr[j] < arr[i]) {
+//                if(arr[j] < arr[i]) {   //오른쪽이 왼쪽보다 더 작으면 -> 교체
 //                    int temp = arr[i];
 //                    arr[i] = arr[j];
 //                    arr[j] = temp;
@@ -140,8 +138,6 @@ public class C07Array {
 //            }
 //        }
 //        System.out.println(Arrays.toString(arr));
-
-//        logn = 제곱승수
 
 ////        조합문제 : 모두 각기 다른 숫자의 배열이 있을때, 만들어질 수 있는 두 숫자의 조합을 문자열 형태로 출력
 ////        ex)(10,20) (10,30) (10,40) (10,50) (20,30) (20,40) (20,50) (30,~)
