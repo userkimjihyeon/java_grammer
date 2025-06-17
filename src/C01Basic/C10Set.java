@@ -2,13 +2,16 @@ package C01Basic;
 
 import com.sun.source.tree.Tree;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class C10Set {
-public static void main(String[] args) {
+public static void main(String[] args) throws IOException {
 ////       ⭐중복X, 순서보장X(index못씀)
 //        Set<String> mySet = new HashSet<>();
 //        mySet.add("h");
@@ -19,6 +22,29 @@ public static void main(String[] args) {
 //        System.out.println(mySet);
 
 ////        ⭐백준 : 숫자카드
+//            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//            br.readLine();
+//            String[] arr1 = br.readLine().split(" ");
+//            br.readLine();
+//            String[] arr2 = br.readLine().split(" ");
+//
+//            Set<String> set1 = new HashSet<>();   //상근이 숫자카드 set에 담기
+//            for(String a : arr1) {
+//                set1.add(a);
+//            }
+//
+//            StringBuilder sb = new StringBuilder();
+//            for(String a : arr2) {                //비교할 숫자카드로 반복문 -> 상근카드가 contains하는지 확인
+//                if(set1.contains(a)) {
+//                    sb.append("1 ");
+//                } else {
+//                    sb.append("0 ");
+//                }
+//            }
+//            sb.deleteCharAt(sb.length()-1);       //맨뒤 공백 삭제
+//            System.out.println(sb);
+
 ////        ⭐프로그래머스 : 폰켓몬
 //        int[] nums = {3, 1, 2, 3};
 //
@@ -32,11 +58,11 @@ public static void main(String[] args) {
 //                    set.add(a);
 //                }
 //
-//                //중복제거한개수가 총개수/2보다 크거나 같으면 -> 총개수/2 출력
+//                //중복제거한개수가 총개수/2보다 ⭐크거나 같으면⭐ -> 총개수/2 출력
 //                if (set.size() >= nums.length / 2) {
 //                    answer = nums.length/2;
 //                } else {
-//                    //더 작으면 set.size() 만큼출력
+//                    //작으면 set.size() 출력
 //                    answer = set.size();
 //                }
 //                return answer;

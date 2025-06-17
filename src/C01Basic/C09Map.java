@@ -258,13 +258,13 @@ public class C09Map {
 //
 //        int n = Integer.parseInt(br.readLine());
 //
-//        //map에 중복 카운팅해서 넣기
+//        //TreeMap -> 오름차순(사전순)
 //        Map<String, Integer> map = new TreeMap<>();
 //        for(int i=0; i<n; i++) {
 //            String[] str = br.readLine().split("\\.");
 //            String extension = str[1];
 //
-//            map.put(extension, map.getOrDefault(extension, 0) + 1);
+//            map.put(extension, map.getOrDefault(extension, 0) + 1);   //키가 있으면 그 키의 value에 +1, 없으면 기본값 0
 //        }
 //
 //        for(String k : map.keySet()) {
