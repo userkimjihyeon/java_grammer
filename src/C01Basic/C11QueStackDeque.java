@@ -37,11 +37,11 @@ public class C11QueStackDeque {
 //        myQue.add("문서2");
 //        myQue.add("문서3");
 //        myQue.add("문서4");
-//        int size = myQue.size();            //poll은 값을 삭제하므로 size()가 반복마다 줄어듬 -> 제대로 출력불가 -> size따로 둬도 queue는 사이즈 변환이 빈번하므로 부적합
+////        Queue 출력 -> 부적합 -> poll은 값을 삭제하므로 size()가 반복마다 줄어듬. 제대로 출력불가 -> size따로 둬도 queue는 사이즈 변환이 빈번하므로 부적합
+//        int size = myQue.size();
 //        for(int i=0; i<size; i++) {
 //            System.out.println(myQue.poll());
 //        }
-//
 ////        ⭐Queue는 일반적으로 while문을 통해 요소 소모
 //        while(!myQue.isEmpty()) {
 //            System.out.println(myQue.poll());
