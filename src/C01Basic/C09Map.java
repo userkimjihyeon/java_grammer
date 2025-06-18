@@ -13,7 +13,7 @@ public class C09Map {
 //        Map<String, Integer> sports = new HashMap<>();
 //        sports.put("농구", 2);
 //        sports.put("배구", 1);
-////        ⭐map은 key를 통해 value를 get
+////        map은 key를 통해 value를 get
 ////        map에서 key값을 통한 검색복잡도는 O(1)
 //        System.out.println(sports.get("농구"));
 //        System.out.println(sports.get("배구"));
@@ -25,12 +25,12 @@ public class C09Map {
 //        int total = 0;
 //        for(int v : sports.values()) {
 //            total += v;
-//            System.out.println(v);
+//            System.out.println(v);  //2
 //        }
 //        int total2 = 0;
 //        for(String k : sports.keySet()) {
 //            total2 += sports.get(k);
-//            System.out.println(k);
+//            System.out.println(k);  //농구
 //        }
 //
 ////        remove : key를 통해 map요소 삭제
@@ -56,8 +56,8 @@ public class C09Map {
 //
 ////        ⭐⭐map출력방법2가지 : 1.foreach문 2.iterator
 ////        1.foreach문 - key값을 set으로 가져오는 것.
-//        for(String a : sports.keySet()) {             //sports.keySet() : key값을 set으로 가져오는 것.
-//            System.out.println(a);  //key
+//        for(String a : sports.keySet()) {       //sports.keySet() : key값을 set으로 가져오는 것.
+//            System.out.println(a);              //key
 //            System.out.println(sports.get(a));  //value
 //        }
 ////        위와같은코드
@@ -92,7 +92,7 @@ public class C09Map {
 ////            }  else {
 ////                myMap.put(arr[i], 1);
 ////            }
-//////            getOrDefault(키값, 초기값) : key값 없을경우 초기값 리턴. 있으면 그 값+1
+//////            ⭐getOrDefault(키값, 초기값) : key값 없을경우 초기값 리턴. 있으면 그 값+1
 //            myMap.put(arr[i], myMap.getOrDefault(arr[i], 0)+1);
 //        }
 //        System.out.println(myMap);
@@ -102,9 +102,9 @@ public class C09Map {
 //        for(String r : removeArr) {
 //            if(myMap.containsKey(r)) {
 //                if(myMap.get(r) == 1) {
-//                    myMap.remove(r);
+//                    myMap.remove(r);                //value가 1이면 삭제
 //                } else {
-//                    myMap.put(r, myMap.get(r)-1);
+//                    myMap.put(r, myMap.get(r)-1);   //value가 1이 아니면 -1
 //                }
 //            }
 //        }
@@ -127,9 +127,9 @@ public class C09Map {
 ////        강사님
 //        String maxKey = "";
 //        for(String k : myMap.keySet()) {
-//            if(myMap.get(k) > max) {
-//                max = myMap.get(k);
-//                maxKey = k;
+//            if(myMap.get(k) > max) {      //k의 value가 max보다 크면
+//                max = myMap.get(k);       //max 교체
+//                maxKey = k;               //maxKey 교체
 //            }
 //        }
 //        System.out.println(maxKey);
@@ -255,20 +255,20 @@ public class C09Map {
 ////        백준 : 파일 정리
 ////        문자열자르기 : .은 특수문자로 취급되어 "." -> "\\."
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//        int n = Integer.parseInt(br.readLine());
-//
-//        //TreeMap -> 오름차순(사전순)
-//        Map<String, Integer> map = new TreeMap<>();
-//        for(int i=0; i<n; i++) {
-//            String[] str = br.readLine().split("\\.");
-//            String extension = str[1];
-//
-//            map.put(extension, map.getOrDefault(extension, 0) + 1);   //키가 있으면 그 키의 value에 +1, 없으면 기본값 0
-//        }
-//
-//        for(String k : map.keySet()) {
-//            System.out.println(k + " " + map.get(k));
+////
+////        int n = Integer.parseInt(br.readLine());
+////
+////        //TreeMap -> 오름차순(사전순)
+////        Map<String, Integer> map = new TreeMap<>();
+////        for(int i=0; i<n; i++) {
+////            String[] str = br.readLine().split("\\.");
+////            String extension = str[1];
+////
+////            map.put(extension, map.getOrDefault(extension, 0) + 1);   //키가 있으면 그 키의 value에 +1, 없으면 기본값 0
+////        }
+////
+////        for(String k : map.keySet()) {
+////            System.out.println(k + " " + map.get(k));
 //        }
 
     }
