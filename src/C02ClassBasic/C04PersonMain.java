@@ -17,6 +17,7 @@ public class C04PersonMain {
 
 ////        위와 같은 문제점을 해결하기 위해 클래스(C04Person)에 속성을 정의하고, 객체로 생성하여 그룹화.
 //        C04Person p1 = new C04Person();
+//     객체명.속성명⭐
 //        p1.name = "hong1";
 //        p1.email = "hong1@naver.com";
 //        p1.age = 10;
@@ -33,10 +34,10 @@ public class C04PersonMain {
 //        p2.name = "hongildong2";    //변경
 //        printMember2(p2);           //출력
 
-//        C04Person p3 = new C04Person();
-//        p3.setName("hong3");     //변수는 private이지만 메서드는 public이어서 접근가능
-//        p3.setEmail("hong3@naver.com");
-//        p3.setAge(3);
+        C04Person p3 = new C04Person();
+        p3.setName("hong3");     //변수는 private이지만 메서드는 public이어서 접근가능
+        p3.setEmail("hong3@naver.com");
+        p3.setAge(3);
 
 ////        리턴값 필요
 //        System.out.println(p3.printPerson());

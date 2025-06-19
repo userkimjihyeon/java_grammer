@@ -24,7 +24,7 @@ public class C01Method {
         System.out.println(sumAcc(20, 30));
     }
 
-//    접근제어자(public), 클래스메서드(static O)/객체메서드(static X), 반환타입(int, String, 배열 등), 매개변수(input값)
+//    접근제어자(public), ⭐⭐클래스메서드(static O)/객체메서드(static X), 반환타입(int, String, 배열 등), 매개변수(input값)
     public static int sumAcc(int start, int end){
         int total = 0;
         for(int i=start; i<=end; i++) {

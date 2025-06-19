@@ -5,7 +5,7 @@ import java.util.List;
 
 //원시자료형 : 스택, 객체의 경우 힙의 주소 값
 //객체 : 힙
-//특정 객체의 변수안정성을 위해 setter를 쓰지않음 -> 객체 생성시점에 필요한 값 최초 할당 (생성자 생성)
+//⭐특정 객체의 변수안정성을 위해 setter를 쓰지않음 -> 객체 생성시점에 필요한 값 최초 할당 (생성자 생성)
 
 public class C07Constructor {
     public static void main(String[] args) {
@@ -36,7 +36,7 @@ class Calendar {
         this.day = day;
     }
 
-//    위의 별도 생성자를 추가할 경우, 초기(기본)생성자는 무시되므로, 필요시 별도로 추가
+//    ⭐위의 별도 생성자를 추가할 경우, 초기(기본)생성자는 무시되므로, 필요시 별도로 추가
     public Calendar() {
 
     }

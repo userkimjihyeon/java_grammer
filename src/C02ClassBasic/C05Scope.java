@@ -7,6 +7,7 @@ import java.util.List;
 public class C05Scope {
 //    ⭐중괄호영역볌위 : 클래스 변수는 최상위 / 객체의 전달방식 : 힙메모리 주소 전달
     public static int v2 = 10;  //클래스 변수
+    public int v3 = 20; //⭐위치와 관련없이?! (static이 있는 곳에서 사용불가) -> 왜? 객체변수니까........
     public static void main(String[] args) {
 ////       지역변수의 유효범위
 //        int v1 = 10;
