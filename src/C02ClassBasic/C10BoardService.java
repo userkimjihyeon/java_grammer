@@ -1,135 +1,116 @@
 package C02ClassBasic;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class C10BoardService {
-    public static void main(String[] args) throws IOException {
 //        1.회원가입 : 이름, 이메일, 비밀번호, id값(auto_increment)
 //        2.회원 전체 목록 조회 : id, email
-//        3.회원 상세 조회(id로 조회) : id, email, name, password, ⭐작성글수(가능한사람만-글작성시마다 Author객체에 postlist를 넣어서 Post객체와 함께 둘다 +1)
-//        4.게시글 작성 : id, 제목, 내용, ⭐작성자Email(Author객체가능)
+//        3.회원 상세 조회(id로 조회) : id, email, name, password, 작성글수(List<Author>)
+//        4.게시글 작성(회원-email입력) : id, title, contents, 작성자Email(Author객체가능)
 //        5.게시물 목록 조회 : id(post), title
-//        6.게시물 상세 조회(id로 조회) : id(post), title, contents, ⭐작성자email(작성자이름조회(할수있는사람만) - post객체 안에 author가 들어가야한다.)
+//        6.게시물 상세 조회(id로 조회) : id, title, contents, 작성자email(작성자이름)
 //        7.서비스 종료
-        //회원가입 -> a1객체생성. 안에 자기가쓴글에 대한 post객체도 가지고 있음.
-        //글쓰기 ->  p1객체생성
-
-        //객체 생성
+    public static void main(String[] args) {
         List<Author> authorList = new ArrayList<>();
         List<Post> postList = new ArrayList<>();
-
-        while(true) {
-            //게시판 번호 입력받기
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("원하는 게시판 번호를 입력하세요");
-            int input = Integer.parseInt(br.readLine());
-
-            switch (input) {
-                case 1 :    //1.회원가입 : 이름, 이메일, 비밀번호, id값(auto_increment)
-                    System.out.println("가입하실 회원의 이름을 입력하세요");
-                    String name = br.readLine();
-                    System.out.println("가입하실 회원의 이메일을 입력하세요");
-                    String email = br.readLine();
-                    System.out.println("가입하실 회원의 비밀번호를 입력하세요");
-                    String password = br.readLine();
-
-                    authorList.add(new Author(name, email, password));
-
-                    System.out.println("가입 되었습니다.");
-                    break;
-                case 2 :    //2.회원 전체 목록 조회 : id, email
-                    System.out.println("전체 회원목록을 조회합니다.");
-
-                    //List<Author>에서 각 Author객체를 반복하면서 조회
-                    for(Author a : authorList) {
-                        System.out.println("id: " + a.getId() + " name: " + a.getName() + " email: " + a.getEmail() + " password: " + a.getPassword());
+        Scanner sc = new Scanner(System.in);
+        while (true){
+            System.out.println("하고자 하는 서비스를 입력해주세요. ");
+            int serviceNumber = Integer.parseInt(sc.nextLine());
+            if(serviceNumber==1){
+                System.out.println("회원가입서비스입니다.");
+                System.out.println("이름 입력 하세요");
+                String name = sc.nextLine();
+                System.out.println("이메일 입력 하세요");
+                String email = sc.nextLine();
+                System.out.println("패스워드 입력 하세요");
+                String password = sc.nextLine();
+                Author author = new Author(name, email, password);
+                authorList.add(author);
+            }else if(serviceNumber==2){
+                System.out.println("회원 목록 조회 입니다.");
+                for(Author a : authorList){
+                    System.out.println(a);
+                }
+            }else if(serviceNumber==3){
+                System.out.println("회원 상세 조회 입니다.");
+                System.out.println("email을 입력해주세요");
+                String email = sc.nextLine();
+                Author author = null;
+                for(Author a : authorList){
+                    if(a.getEmail().equals(email)){
+                        author = a;
+                        break;
                     }
-                    break;
-                case 3 :    //3.회원 상세 조회(id로 조회) : id, email, name, password, ⭐작성글수(List<Author> / 가능한사람만-글작성시마다 Author객체에 postlist를 넣어서 Post객체와 함께 둘다 +1)
-                    System.out.println("조회할 회원id를 입력하세요.");
-                    int id = Integer.parseInt(br.readLine());
-
-                    for(Author a : authorList) {
-                        if (a == null) {
-                            System.out.println("존재하지 않는 id입니다.");
-                        } else {
-                            System.out.println("id: " + a.getId() + " name: " + a.getName() + " email: " + a.getEmail() + " password: " + a.getPassword());
-                            //작성글수조회
-                            System.out.println("작성글 수 : " + a.getPostlist());
-                        }
+                }
+                System.out.println(author.getName() + author.getEmail() + author.getPostList().size());
+            }else if(serviceNumber==4){
+                System.out.println("게시글 작성 서비스입니다.");
+                System.out.println("제목을 입력 하세요");
+                String title = sc.nextLine();
+                System.out.println("내용을 입력 하세요");
+                String contents = sc.nextLine();
+                System.out.println("작성자의 이메일을 입력 하세요");
+                String authorEmail = sc.nextLine();
+                Author author = null;
+                for(Author a : authorList){
+                    if(a.getEmail().equals(authorEmail)){
+                        author = a;
                     }
-                    break;
-                case 4 :    //4.게시글 작성 : id, 제목, 내용, ⭐작성자Email(Author객체가능)
-                    System.out.println("작성할 게시글의 제목을 입력하세요.");
-                    String title = br.readLine();
-                    System.out.println("작성할 게시글의 내용을 입력하세요.");
-                    String contents = br.readLine();
-                    System.out.println("작성자 이메일을 입력하세요.");
-                    String authorEmail = br.readLine();
-
-                    for(Author a : authorList) {
-                        if(authorEmail.equals(a.getEmail())) {
-                            postList.add(new Post(title, contents, authorEmail));
-
-                            //author객체의 postlist++하기
-                            a.increasePostCount();
-                        }
+                }
+                Post post = new Post(title, contents, author);
+                postList.add(post);
+//                글을 쓰는 시점에 postList에 add 및 author의 postList에도 add
+//                author.getPostList().add(post);
+            }else if(serviceNumber==5){
+                System.out.println("게시글 전체 조회 입니다.");
+                for(Post p : postList){
+                    System.out.println(p);
+                }
+            }else if(serviceNumber==6){
+                System.out.println("게시글 상세 조회 입니다.");
+                System.out.println("게시글의 ID를 입력해주세요");
+                long postId = Long.parseLong(sc.nextLine());
+                Post post = null;
+                for(Post p : postList){
+                    if(p.getId() == postId){
+                        post=p;
                     }
-
-                    System.out.println("등록 되었습니다.");
-                    break;
-                case 5 :    //5.게시물 목록 조회 : id(post), title
-                    System.out.println("전체 게시글을 조회합니다.");
-
-                    //List<Post>에서 각 Post객체를 반복하면서 조회
-                    for(Post p : postList) {
-                        System.out.println("id: " + p.getId() + " title: " + p.getTitle());
-                    }
-                    break;
-                case 6 :    //6.게시물 상세 조회(id로 조회) : id(post), title, contents, ⭐작성자email(작성자이름조회(할수있는사람만) - post객체 안에 author가 들어가야한다.)
-                    System.out.println("게시글을 조회할 id를 입력하세요");
-                    int postId = Integer.parseInt(br.readLine());
-
-                    for(Post p : postList) {
-                        if(postId == p.getId()) {
-                            System.out.println("Id: " + p.getId() + " Title: " + p.getTitle() + " Contents: " + p.getContents() + "작성자 email : " + p.getAuthorEmail());
-                        } else {
-                            System.out.println("일치하는 게시글이 없습니다.");
-                        }
-                    }
-                    break;
-                case 7 :    //7.서비스 종료
-                    System.out.println("서비스를 종료합니다.");
-                    return;
+                }
+                System.out.println("제목 : " + post.getTitle() + "내용 : " + post.getContents() + "작성자 이름 : "+ post.getAuthor().getName());
+            }else {
+                break;
             }
         }
     }
 }
 
-
-class Author {
-    //필드
-    public static int auto_authorId;
-    private int id;
+class Author{
+    //    일반적으로 클래스를 정의할때 원시자료형은 wrapper클래스로 정의
+    private Long id;
+    private static Long static_id = 0L;
     private String name;
     private String email;
     private String password;
-    private int postList;
-
-    //생성자
-    public Author(String name, String email, String password) {
-        this.id = auto_authorId++;
+    //    Author객체에 본인이 쓸글 목록인 postList객체를 만들어둠으로서 편의성 향상
+    List<Post> postList;
+    public Author(String name, String email, String password){
+        this.id  = static_id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.postList  = new ArrayList<>();
+        static_id++;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
+    }
+
+    public static Long getStatic_id() {
+        return static_id;
     }
 
     public String getName() {
@@ -144,35 +125,42 @@ class Author {
         return password;
     }
 
-    public int getPostlist() {
+    public List<Post> getPostList() {
         return postList;
     }
 
-    public void increasePostCount() {
-        this.postList++;
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", post_count='" + postList.size() + '\'' +
+                '}';
     }
-
 }
-
-
-class Post {
-    //필드
-    public static int auto_postId;
-    private int id;
+class Post{
+    private Long id;
+    private static Long staticId=0L;
     private String title;
     private String contents;
-    private String authorEmail;  //⭐
-
-    //생성자
-    public Post(String title, String contents, String authorEmail) {
-        this.id = auto_postId++;
+    //    객체 안의 객체를 선언함으로서 post객체에서 쉽게 author객체에 접근 가능
+    private Author author;
+    public Post(String title, String contents, Author author){
+        this.id = staticId;
         this.title = title;
         this.contents = contents;
-        this.authorEmail = authorEmail;
+        this.author = author;
+        this.author.getPostList().add(this);
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
+    }
+
+    public static Long getStaticId() {
+        return staticId;
     }
 
     public String getTitle() {
@@ -183,7 +171,17 @@ class Post {
         return contents;
     }
 
-    public String getAuthorEmail() {
-        return authorEmail;
+    public Author getAuthor() {
+        return author;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", contents='" + contents + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }
