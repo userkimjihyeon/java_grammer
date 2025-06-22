@@ -56,12 +56,11 @@ public class C13RecursiveCombiPermu {
 //        System.out.println(doubleList);
 
 ////        방법 3. 재귀
-        combi(원본, 임시, 결과, target?, 방문여부?);
-        System.out.println(doubleList);
-
-//        combi(myList, new ArrayList<>(),doubleList, 2, 0);    //⭐빈 list 던지기
+////        ⭐자주쓰는 패턴 : combi(원본, new ArrayList<>(), 결과저장소, 뽑을개수, 0);
+//        combi(myList, new ArrayList<>(), doubleList, 2, 0);
 //        System.out.println(doubleList);
 
+////        재귀함수 예제 : 순열
 ////        1,2,3,4를 n개씩 뽑은 순열구하기
 ////        [[1,2], [1,3], [1,4], [2,1], [2,3] ...[4,3]]
 //        permu(myList, new ArrayList<>(), doubleList, 2, new boolean[myList.size()]);
@@ -69,30 +68,27 @@ public class C13RecursiveCombiPermu {
 
     }
 
-//                        원본                 임시리스트                     결과                  목표개수:n       방문여부
-    static void permu(List<Integer> myList, List<Integer> temp, List<List<Integer>> doubleList, int target, boolean[] visited) {
-        if(temp.size() == target) {
-            doubleList.add(new ArrayList<>(temp));  //⭐temp아니고 new ArrayList<>(temp) 주의.
-            return;
-        }
-        for(int i=0; i<myList.size(); i++) {
-            if(!visited[i]) {   //⭐temp[a,b]에서 a가 이미 방문했던 숫자인지 확인
-                visited[i] = true;  //방문했어용
-                temp.add(myList.get(i));    //원본 temp에 add
-                permu(myList, temp, doubleList, target, visited);
-                temp.remove(temp.size()-1); //temp의 마지막자리 삭제
-                visited[i] = false;   //방문리셋
-            }
-        }
-    }
+////                            원본                 임시리스트                     결과              목표개수:n       방문여부
+//    static void permu(List<Integer> myList, List<Integer> temp, List<List<Integer>> doubleList, int target, boolean[] visited) {
+//        if(temp.size() == target) {
+//            doubleList.add(new ArrayList<>(temp));  //⭐temp는 힙메모리주소가 공유되므로, new ArrayList<>(temp)로 새로운 객체 생성해서 add.
+//            return;
+//        }
+//        for(int i=0; i<myList.size(); i++) {
+//            if(!visited[i]) {   //⭐
+//                visited[i] = true;  //방문했어용
+//                temp.add(myList.get(i));    //원본 temp에 add
+//                permu(myList, temp, doubleList, target, visited);
+//                temp.remove(temp.size()-1); //temp의 마지막자리 삭제
+//                visited[i] = false;   //방문리셋
+//            }
+//        }
+//    }
 
-    static void combi()
-
-
-//    //                       원본                 임시리스트                   결과                  목표개수:n    시작점
+////                            원본                 임시리스트                   결과                목표개수:n    시작점
 //    static void combi(List<Integer> myList, List<Integer> temp, List<List<Integer>> doubleList, int target, int start) {
 //        if(temp.size() == target) {
-//            doubleList.add(new ArrayList<>(temp));  //⭐new ArrayList<>() 주의
+//            doubleList.add(new ArrayList<>(temp));  //⭐그냥 temp를 add하면 temp의 주소값이 add되어, temp수정시 doubleList내용도 수정되므로, new ArrayList<>(temp)
 //            return;
 //        }
 //        for(int i=start; i<myList.size(); i++) {  //⭐start는 중복없이조합 만들기 위함.
@@ -102,7 +98,7 @@ public class C13RecursiveCombiPermu {
 //        }
 //    }
 
-
+//    재귀연습 - hello world + staticCount 9번, 12번 출력
 //    static int staticCount = 0;
 ////                           0           2
 //    static void forRecur(int num, int target) {         // 함수2번

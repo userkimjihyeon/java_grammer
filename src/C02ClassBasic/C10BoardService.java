@@ -147,12 +147,14 @@ class Post{
     private String contents;
     //    객체 안의 객체를 선언함으로서 post객체에서 쉽게 author객체에 접근 가능
     private Author author;
+
     public Post(String title, String contents, Author author){
         this.id = staticId;
         this.title = title;
         this.contents = contents;
         this.author = author;
         this.author.getPostList().add(this);
+        staticId++;
     }
 
     public Long getId() {
