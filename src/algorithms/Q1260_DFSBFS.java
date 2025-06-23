@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class Q1260_DFSBFS {
-    static List<List<Integer>> graph = new ArrayList<>();
+    static List<List<Integer>> graph = new ArrayList<>();  //👉 랜덤 접근이 많다 → ArrayList👉 중간 삽입/삭제가 많다 → LinkedList
     static boolean[] visited;
 
     public static void main(String[] args) throws IOException {
@@ -62,7 +62,8 @@ public class Q1260_DFSBFS {
         }
     }
     static void bfs(int start) {
-        Queue<Integer> queue = new LinkedList<>();  //⭐LinkedList : 맨 앞꺼 줄에서 빠져나가도 나머진 그대로 줄만 연결하면 됨
+        //ArrayList는 Queue 인터페이스를 구현하지 않음 -> poll(), offer() 같은 Queue 전용 메서드 못씀.
+        Queue<Integer> queue = new LinkedList<>();  //⭐LinkedList : 맨 앞꺼 줄에서 빠져나가도 나머진 그대로 줄만 연결하면 됨.
         visited[start] = true;
         queue.offer(start);
 
