@@ -20,7 +20,7 @@ public class Q1260_DFSBFS {
         int v = Integer.parseInt(input[2]); //start
 
         //graph 초기화 -> 빈리스트가 있어야 add가능. ex)graph.get(1) = null -> NPE 터짐!
-        for(int i=0; i<=n; i++) {
+        for(int i=0; i<=n; i++) {   //0은 빈자리로 두고 1~n번에 실제데이터 저장
             graph.add(new ArrayList<>());
         }
 
