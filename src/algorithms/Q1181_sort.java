@@ -10,14 +10,15 @@ public class Q1181_sort {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        //중복제거 -> TreeSet
-        Set<String> treeSet = new TreeSet<>(new Comparator<String>() {
+        //1.길이가 짧은순서 2.길이같으면 사전순
+        //중복제거, 정렬 -> treeSet
+        TreeSet<String> treeSet = new TreeSet<>(new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                if (o1.length()-o2.length() == 0) {
-                    return o1.compareTo(o2);    //사전순
+                if(o1.length() != o2.length()) {
+                    return o1.length()-o2.length();
                 } else {
-                    return o1.length()-o2.length(); //길이순
+                    return o1.compareTo(o2);
                 }
             }
         });
@@ -26,9 +27,9 @@ public class Q1181_sort {
             treeSet.add(br.readLine());
         }
 
-
-        for(String a : treeSet) {
+        for(String a : treeSet){
             System.out.println(a);
         }
+
     }
 }

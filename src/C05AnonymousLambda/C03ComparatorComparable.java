@@ -38,7 +38,7 @@ public class C03ComparatorComparable {
 //        정렬방법2. Comparator를 구현한 익명객체를 사용.
 //        Comparator 활용도가 높은 이유는 많은 정렬 메서드에서 Comparator객체를 요구하기 때문.
         //2-1)new Comparator
-        studentList.sort(new Comparator<Student>() {
+        studentList.sort(new Comparator<Student>() {                                           //⭐암기 studentList.sort(new Comparator<Student>() {비교식 작성});
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getName().compareTo(o2.getName());
@@ -46,8 +46,8 @@ public class C03ComparatorComparable {
         });
         //2-2)람다
         studentList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));    //⭐암기 studentList.sort(람다식);
-        System.out.println(studentList);
 
+        System.out.println(studentList);
 
         String[] stArr = {"hello", "java", "C++", "world2"};
         Arrays.sort(stArr);
@@ -60,7 +60,7 @@ public class C03ComparatorComparable {
                 return o2.length()-o1.length();
             }
         });
-        //2. 람다
+        //2. 람다식
         Arrays.sort(stArr, (o1, o2) -> o2.length()-o1.length());
         System.out.println(Arrays.toString(stArr));
 
