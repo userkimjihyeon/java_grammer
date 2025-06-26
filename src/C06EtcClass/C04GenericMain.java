@@ -28,14 +28,14 @@ public class C04GenericMain {
         GenericPerson<Integer> p2 = new GenericPerson<>(10);
 
 //        제네릭의 사용 예시
-        List<String> myList = new ArrayList<>();
+        List<String> myList = new ArrayList<>();    //ArrayList,Stream,Optional 클래스등이 제네릭으로 설계되어있다.
         Stream<String> myStream;
         Optional<Student> studentOptional;
 
         }
 
-//    제네릭메서드는 반환타입 왼쪽에 <T>라고 선언
-//    이때 T에는 참조형변수인 객체타입만을 허용
+//    ⭐제네릭메서드는 반환타입 왼쪽에 <T>라고 선언
+//    ⭐이때 T에는 참조형변수인 객체타입만을 허용
     static <T> void allChange(T[] arr, int a , int b) {
         T temp = arr[a];
         arr[a] = arr[b];
@@ -71,7 +71,7 @@ class Person {
     }
 
 }
-//제네릭 클래스는 클래스명 옆에 <T>선언
+//⭐제네릭 클래스는 클래스명 옆에 <T>선언
 class GenericPerson<T> {
     private T value;
 

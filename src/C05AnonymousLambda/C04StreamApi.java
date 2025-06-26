@@ -148,14 +148,14 @@ public class C04StreamApi {
 //            System.out.println("값이 없습니다.");
 //        }
 
-//        Optional객체 생성 방법 3가지
+//        ⭐Optional객체 생성 방법 3가지
         Optional<String> opt1 = Optional.empty();   //비어있는 Optional객체 생성
         Optional<String> opt2_1 = Optional.ofNullable(null);    //비어있는 Optional객체 생성
         Optional<String> opt2_2 = Optional.ofNullable("hello");    //값이 있는 Optional객체 생성
         Optional<String> opt3 = Optional.of("hello");   //값이 있는 Optional객체 생성
 
 ////        Optional객체 처리 방법 4가지
-////        방법1. isPresent()로 확인후에 get()
+////        방법1. ⭐isPresent()로 확인후에 get()
 //        if(opt2_1.isPresent()) {
 //            System.out.println(opt2_1.get());
 //        } else {
