@@ -33,7 +33,6 @@ public class MemberController {
                     continue;
                 }
                     memberService.register(name, email, password);
-                    System.out.println("현재 데이터: " + memberService.findAll());
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());     //Service에서 입력한 메시지가 출력됨.
                 }

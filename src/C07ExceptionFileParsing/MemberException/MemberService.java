@@ -43,7 +43,7 @@ public class MemberService {
         if(!optionalMember.isPresent()) {
             throw new NoSuchElementException("존재하지 않는 이메일입니다.");
         }
-        if(!optionalMember.get().getPassword().equals(password)) {
+        if(!optionalMember.get().getPassword().equals(password)) {      //⭐
             throw new IllegalArgumentException("비밀번호가 틀렸습니다.");
         }
     }
