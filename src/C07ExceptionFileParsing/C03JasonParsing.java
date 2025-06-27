@@ -15,25 +15,27 @@ import java.util.Map;
 public class C03JasonParsing {
     public static void main(String[] args) throws IOException {
 //        jackson download
-//        ObjectMapper : json 직렬화 역직렬화를 위한 라이브러리
+//        ⭐ObjectMapper : json 직렬화 역직렬화를 위한 라이브러리
         ObjectMapper o1 = new ObjectMapper();
 
-////       사용법1(객체생성) : 클래스명 객체명 = o1.readValue(문자열, 클래스명.class)
+////       ⭐사용법1(객체생성) : 클래스명 객체명 = o1.readValue(문자열, 클래스명.class)
 //        Path filePath = Paths.get("src/C07ExceptionFileParsing/myJson1.json");
 //        String st1 = Files.readString(filePath);
 //
-//        Map<String, String> myMap = o1.readValue(st1, Map.class);   //⭐
+//        // JSON 문자열을 Map으로 바꾸는 과정
+//        Map<String, String> myMap = o1.readValue(st1, Map.class);         //readValue(json, type) : json을 자바객체(map)로 변환
 //        System.out.println(myMap.get("name"));
 //        System.out.println(String.valueOf(myMap.get("id")));
 //        System.out.println(myMap);
 //
-//        Student s1 = o1.readValue(st1, Student.class);  //⭐
+//                          역직렬화 (Json,     객체)
+//        Student s1 = o1.readValue(st1, Student.class);
 //        System.out.println(s1);
 //
-////        사용법2(트리구조의 JsonNode로 변환) : JsonNode 객체명 = o1.readTree(문자열);
-////        복잡한 json자료구조일 경우에 트리구조의 jsonNode사용
-//        JsonNode jasonNodes = o1.readTree(st1);       //⭐
-//        Map<String, String> myMap2 = new HashMap<>();     //⭐
+////        ⭐사용법2(트리구조의 JsonNode로 변환) : JsonNode 객체명 = o1.readTree(문자열);
+////        복잡한 json자료구조일 경우에 트리구조의 jsonNode사용(-> Map보다 더 유연하고 탐색하기 쉬운 구조)
+//        JsonNode jasonNodes = o1.readTree(st1);
+//        Map<String, String> myMap2 = new HashMap<>();
 //        myMap2.put("id", jasonNodes.get("id").asText());
 //        myMap2.put("name", jasonNodes.get("name").asText());
 //        myMap2.put("classNumber", jasonNodes.get("classNumber").asText());
