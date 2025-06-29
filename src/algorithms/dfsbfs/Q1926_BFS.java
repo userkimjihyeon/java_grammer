@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.dfsbfs;
 
 public class Q1926_BFS {
     public static void main(String[] args) {

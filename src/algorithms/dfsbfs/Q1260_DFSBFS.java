@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.dfsbfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
